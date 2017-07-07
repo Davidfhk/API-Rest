@@ -24,6 +24,16 @@ class UserController
 		$user = $user->show($id);
 		$response = json_encode($user);
 	return $response;
+	}
+
+	function new($request, $response){
+		$name = $request->getParam('name');
+		$description = $request->getParam('description');
+
+		$user = new User($this->container->db);
+		$user = $user->new($name, $description);
+		$response = $user;
+	return $response;
 
 	}
 }
