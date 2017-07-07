@@ -14,3 +14,5 @@ $app->get('/users', 'UserController:all');
 $app->get('/user/{id}', 'UserController:show');
 
 $app->post('/new', 'UserController:new');
+
+$app->delete('/delete/{id}', 'UserController:delete');
