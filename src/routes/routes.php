@@ -10,3 +10,6 @@ $app->get('/', function (Request $request, Response $response){
 
 
 $app->get('/users', 'UserController:all');
+
+$app->get('/user/{id}', 'UserController:show');
+
