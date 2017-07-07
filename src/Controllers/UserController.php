@@ -44,4 +44,17 @@ class UserController
 		$response = $user;
 	return $response;
 	}
+
+	function update($request,$response,$args){
+		$datas = $request->getParsedBody();
+
+		$id = (int)$args['id'];
+		$name = $datas['name'];
+		$description = $datas['description'];
+		
+		$user = new User($this->container->db);
+		$user = $user->update($name, $description, $id);
+		$response = $user;
+	return $response;
+	}
 }
