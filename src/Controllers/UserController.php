@@ -36,4 +36,12 @@ class UserController
 	return $response;
 
 	}
+
+	function delete($request, $response, $args){
+		$user = new User($this->container->db);
+		$id = (int)$args['id'];
+		$user = $user->delete($id);
+		$response = $user;
+	return $response;
+	}
 }
