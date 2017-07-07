@@ -34,4 +34,13 @@ class User
 		
 		return $data;
 	}
+
+	function delete($id){
+		$sql = $this->db->prepare("DELETE FROM notas WHERE id = :id");
+		$sql->execute(array(":id"=>$id));
+		$data = "Usuario eliminado con exito";
+		
+		return $data;
+	}
+
 }
