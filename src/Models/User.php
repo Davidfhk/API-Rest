@@ -17,6 +17,13 @@ class User
 		$data = $sql->fetchAll(PDO::FETCH_ASSOC);
 		
 		return $data;
-		// var_dump($data);
+	}
+
+	function show($id){
+		$sql = $this->db->prepare("SELECT * FROM notas WHERE id = :id");
+		$sql->execute(array(":id"=>$id));
+		$data = $sql->fetchAll(PDO::FETCH_ASSOC);
+		
+		return $data;
 	}
 }
