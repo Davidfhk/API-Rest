@@ -26,4 +26,12 @@ class User
 		
 		return $data;
 	}
+
+	function new($name, $description){
+		$sql = $this->db->prepare("INSERT INTO notas (nombre, descripcion) VALUES (:name,:description)");
+		$sql->execute(array(":name"=>$name, ":description"=>$description));
+		$data = "Usuario insertado con exito";
+		
+		return $data;
+	}
 }
