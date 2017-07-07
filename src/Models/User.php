@@ -43,4 +43,13 @@ class User
 		return $data;
 	}
 
+	function update($name,$description,$id){
+
+		$sql = $this->db->prepare("UPDATE notas SET nombre = :name, descripcion = :description WHERE id = :id");
+		$sql->execute(array(":name"=>$name, ":description"=>$description, ":id"=>$id));
+		$data = "Usuario modificado con exito";
+		
+		return $data;
+	}
+
 }
