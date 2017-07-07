@@ -16,3 +16,5 @@ $app->get('/user/{id}', 'UserController:show');
 $app->post('/new', 'UserController:new');
 
 $app->delete('/delete/{id}', 'UserController:delete');
+
+$app->put('/update/{id}', 'UserController:update');
