@@ -12,14 +12,14 @@ class UserController
 	}
 
 	function all($request, $response){
-		$user = new User($this->container->db);
+		$user = User::getInstance($this->container->db);
 		$users = $user->all();
 		$response = json_encode($users);
     return $response;
 	}
 
 	function show($request, $response, $args){
-		$user = new User($this->container->db);
+		$user = User::getInstance($this->container->db);
 		$id = (int)$args['id'];
 		$user = $user->show($id);
 		$response = json_encode($user);
@@ -30,7 +30,7 @@ class UserController
 		$name = $request->getParam('name');
 		$description = $request->getParam('description');
 
-		$user = new User($this->container->db);
+		$user = User::getInstance($this->container->db);
 		$user = $user->new($name, $description);
 		$response = $user;
 	return $response;
@@ -38,7 +38,7 @@ class UserController
 	}
 
 	function delete($request, $response, $args){
-		$user = new User($this->container->db);
+		$user = User::getInstance($this->container->db);
 		$id = (int)$args['id'];
 		$user = $user->delete($id);
 		$response = $user;
@@ -52,7 +52,7 @@ class UserController
 		$name = $datas['name'];
 		$description = $datas['description'];
 		
-		$user = new User($this->container->db);
+		$user = User::getInstance($this->container->db);
 		$user = $user->update($name, $description, $id);
 		$response = $user;
 	return $response;
