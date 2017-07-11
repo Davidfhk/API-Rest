@@ -7,4 +7,8 @@ Utilizando la inyección de dependencias
 
 -----------------------------------------------------------------------------
 
+Por ahora, no se crean templates.
+
+Las peticiones se pueden comprobar en PostMan o similares
+
 Nombre de la bbdd : api_mcfly
