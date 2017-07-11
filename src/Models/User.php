@@ -6,6 +6,9 @@ use \PDO;
 class User
 {
 	private $db;
+	private static $instance;
+
+
 
 	function __construct($db){
 		$this->db = $db;
@@ -51,5 +54,13 @@ class User
 		
 		return $data;
 	}
+
+	public static function getInstance($db){
+		if (self::$instance == null) {
+			self::$instance = new User($db);
+		}
+		return self::$instance;
+	}
+	private function __clone(){}
 
 }
