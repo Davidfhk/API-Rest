@@ -7,7 +7,7 @@ Utilizando la inyección de dependencias
 
 -----------------------------------------------------------------------------
 
-Por ahora, no se crean templates.
+Por ahora, no se crean vistas.
 
 Las peticiones se pueden comprobar en PostMan o similares
 
